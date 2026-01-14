@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tridisha Baruah | Data-Driven Marketing Strategist</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563EB; /* Professional Blue */
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --text-gray: #64748b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        /* --- Navigation --- */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 5%;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 1.2rem;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            margin-left: 2rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            padding: 8rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .highlight {
+            color: var(--primary);
+            position: relative;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-gray);
+            max-width: 700px;
+            margin: 1.5rem auto;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(37, 99, 235, 0.2);
+        }
+
+        /* --- Stats/Impact Section --- */
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 4rem auto;
+            padding: 0 5%;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            display: block;
+        }
+
+        /* --- Skills Section --- */
+        .section {
+            padding: 5rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .skill-tag {
+            background: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* --- Experience & Education --- */
+        .timeline-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-left: 5px solid var(--primary);
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+        }
+
+        .role {
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .company {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .date {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+
+        ul.achievements {
+            padding-left: 1.2rem;
+            color: #475569;
+        }
+
+        ul.achievements li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 3rem 5%;
+            margin-top: 4rem;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 1rem;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--primary);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .nav-links { display: none; } /* Simplified for mobile */
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">TRIDISHA BARUAH</div>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#experience">Experience</a>
+            <a href="#education">Education</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <h1>Driving Growth Through <br><span class="highlight">Data & Creativity</span></h1>
+        <p>Performance Marketing Specialist bridging the gap between Computer Science and Digital Strategy. Expert in GA4, Paid Media, and Revenue Optimization.</p>
+        <br>
+        <a href="#contact" class="btn">Get in Touch</a>
+    </section>
+
+    <div class="stats-container">
+        <div class="stat-card">
+            <span class="stat-number">$1M+</span>
+            <span class="stat-label">Revenue Generated at Pinkvilla</span>
+        </div>
+        <div class="stat-card">
+            <span class="stat-number">1:1</span>
+            <span class="stat-label">MSc Digital Marketing (Honours)</span>
+        </div>
+        <div class="stat-card">
+            <span class="stat-number">3+</span>
+            <span class="stat-label">Years Global Experience</span>
+        </div>
+    </div>
+
+    <section class="section" id="skills">
+        <h2 class="section-title">Technical Stack</h2>
+        <div class="skills-grid">
+            <div class="skill-tag"><i class="fab fa-google"></i> Google Ads & GA4</div>
+            <div class="skill-tag"><i class="fab fa-facebook"></i> Meta Ads Manager</div>
+            <div class="skill-tag"><i class="fas fa-chart-line"></i> Power BI</div>
+            <div class="skill-tag"><i class="fab fa-tiktok"></i> TikTok Ads</div>
+            <div class="skill-tag"><i class="fab fa-hubspot"></i> HubSpot CRM</div>
+            <div class="skill-tag"><i class="fas fa-code"></i> HTML/CSS (BTech Bg)</div>
+            <div class="skill-tag"><i class="fas fa-search"></i> SEO & CRO</div>
+        </div>
+    </section>
+
+    <section class="section" id="experience">
+        <h2 class="section-title">Professional Experience</h2>
+
+        <div class="timeline-item">
+            <div class="job-header">
+                <div>
+                    <div class="role">Digital Marketing Intern & CEO Office Analyst</div>
+                    <div class="company">Aunua Global (Dublin)</div>
+                </div>
+                <div class="date">Feb 2025 - Present</div>
+            </div>
+            <ul class="achievements">
+                <li>Manage multi-channel digital communication and audience engagement across social platforms.</li>
+                <li>Analyze GA4 and Power BI dashboards to evaluate creative performance and optimize advertising strategies.</li>
+                <li>Drive ad copy development and design reviews for visual consistency.</li>
+            </ul>
+        </div>
+
+        <div class="timeline-item">
+            <div class="job-header">
+                <div>
+                    <div class="role">Performance Marketing & Creative Content Lead</div>
+                    <div class="company">Pinkvilla (India & USA)</div>
+                </div>
+                <div class="date">Jan 2022 - Mar 2024</div>
+            </div>
+            <ul class="achievements">
+                <li>Managed digital monetization campaigns generating <strong>$1M+ revenue</strong>, applying analytical insights to improve CTR and ROAS.</li>
+                <li>Led paid social initiatives across Meta, overseeing ad concept development and UGC scriptwriting.</li>
+                <li>Conducted market research to identify creative opportunities and packaging enhancements.</li>
+            </ul>
+        </div>
+
+        <div class="timeline-item">
+            <div class="job-header">
+                <div>
+                    <div class="role">Digital Campaign Strategist</div>
+                    <div class="company">Procter & Gamble</div>
+                </div>
+                <div class="date">Jan 2020 - Dec 2021</div>
+            </div>
+            <ul class="achievements">
+                <li>Supported paid digital campaigns focusing on creative performance evaluation and reporting.</li>
+                <li>Analyzed user engagement and audience behavior to refine communication strategies.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="section" id="education">
+        <h2 class="section-title">Education</h2>
+        
+        <div class="timeline-item">
+            <div class="job-header">
+                <div>
+                    <div class="role">M.Sc. Digital Marketing & Analytics</div>
+                    <div class="company">Dublin Business School</div>
+                </div>
+                <div class="date">2024 - 2025</div>
+            </div>
+            <p><strong>Grade: First Class Honours (1:1)</strong></p>
+            <p>Key Modules: Digital Performance Analytics (GA4), CRO, Paid Media Optimization, Business Intelligence (Power BI).</p>
+        </div>
+
+        <div class="timeline-item">
+            <div class="job-header">
+                <div>
+                    <div class="role">MBA Technical Marketing & BTech Computer Science</div>
+                    <div class="company">NMIMS Mumbai</div>
+                </div>
+                <div class="date">2015 - 2020</div>
+            </div>
+            <p>Integrated technical background providing a strong foundation in data logic and systems.</p>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <h2>Let's Scale Your Digital Presence</h2>
+        <p style="margin: 1rem 0; opacity: 0.8;">Open to opportunities in Dublin (Stamp 1G)</p>
+        <div class="social-links">
+            <a href="mailto:tridishabaruahofficial@gmail.com"><i class="fas fa-envelope"></i></a>
+            <a href="https://linkedin.com/in/tridisha-baruah-851418118/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <p style="margin-top: 2rem; font-size: 0.8rem;">&copy; 2026 Tridisha Baruah</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
