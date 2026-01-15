@@ -3,14 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tridisha Baruah | Data-Driven Marketing Strategist</title>
+    <title>Tridisha Baruah | Digital Marketing Portfolio</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         :root {
-            --primary: #2563EB; /* Professional Blue */
+            --primary: #E11D48; /* Pinkvilla-inspired Pink/Red for impact */
+            --primary-dark: #be123c;
             --dark: #0f172a;
             --light: #f8fafc;
-            --text-gray: #64748b;
+            --text-gray: #475569;
+            --glass: rgba(255, 255, 255, 0.95);
         }
 
         * {
@@ -41,25 +43,26 @@
 
         .logo {
             font-weight: 800;
-            font-size: 1.2rem;
-            letter-spacing: -0.5px;
+            font-size: 1.4rem;
+            color: var(--dark);
         }
+
+        .logo span { color: var(--primary); }
 
         .nav-links a {
             text-decoration: none;
-            color: var(--dark);
+            color: var(--text-gray);
             margin-left: 2rem;
-            font-weight: 500;
+            font-weight: 600;
             transition: color 0.3s;
+            font-size: 0.95rem;
         }
 
-        .nav-links a:hover {
-            color: var(--primary);
-        }
+        .nav-links a:hover { color: var(--primary); }
 
         /* --- Hero Section --- */
         .hero {
-            padding: 8rem 5%;
+            padding: 8rem 5% 4rem;
             max-width: 1200px;
             margin: 0 auto;
             text-align: center;
@@ -67,299 +70,366 @@
 
         .hero h1 {
             font-size: 3.5rem;
-            margin-bottom: 1rem;
-            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            color: var(--dark);
         }
 
-        .highlight {
-            color: var(--primary);
-            position: relative;
-        }
-
-        .hero p {
-            font-size: 1.25rem;
+        .hero p.tagline {
+            font-size: 1.5rem;
             color: var(--text-gray);
-            max-width: 700px;
-            margin: 1.5rem auto;
+            font-style: italic;
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .btn {
             display: inline-block;
             background: var(--primary);
             color: white;
-            padding: 0.8rem 2rem;
+            padding: 1rem 2.5rem;
             border-radius: 50px;
             text-decoration: none;
-            font-weight: 600;
-            transition: transform 0.2s, box-shadow 0.2s;
+            font-weight: 700;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(225, 29, 72, 0.3);
         }
 
         .btn:hover {
+            background: var(--primary-dark);
             transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(37, 99, 235, 0.2);
         }
 
-        /* --- Stats/Impact Section --- */
-        .stats-container {
+        /* --- Client Strip --- */
+        .client-strip {
+            background: white;
+            padding: 2rem 5%;
+            margin-top: 4rem;
+            border-top: 1px solid #e2e8f0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .client-logos {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            align-items: center;
+            opacity: 0.6;
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #94a3b8;
+        }
+
+        /* --- Stats Grid --- */
+        .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 2rem;
             max-width: 1000px;
-            margin: 4rem auto;
+            margin: -3rem auto 5rem;
+            position: relative;
+            z-index: 10;
             padding: 0 5%;
         }
 
         .stat-card {
-            background: white;
+            background: var(--dark);
+            color: white;
             padding: 2rem;
-            border-radius: 12px;
+            border-radius: 15px;
             text-align: center;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            transition: transform 0.3s;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
 
-        .stat-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .stat-number {
+        .stat-num {
             font-size: 2.5rem;
             font-weight: 800;
             color: var(--primary);
             display: block;
+            margin-bottom: 0.5rem;
         }
 
-        /* --- Skills Section --- */
-        .section {
+        /* --- Projects / Case Studies --- */
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .project-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 5% 5rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            margin-bottom: 3rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-header {
+            background: var(--dark);
+            color: white;
+            padding: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .project-content {
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .metric-box {
+            background: #f1f5f9;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .tech-stack {
+            margin-top: 1rem;
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .tech-badge {
+            background: #e2e8f0;
+            padding: 0.3rem 0.8rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        /* --- Awards Section --- */
+        .awards-section {
+            background: var(--dark);
+            color: white;
             padding: 5rem 5%;
+        }
+
+        .awards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
             max-width: 1200px;
             margin: 0 auto;
         }
 
-        .section-title {
-            font-size: 2rem;
-            margin-bottom: 3rem;
-            text-align: center;
-        }
-
-        .skills-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1rem;
-        }
-
-        .skill-tag {
-            background: white;
-            padding: 0.8rem 1.5rem;
-            border-radius: 8px;
-            border: 1px solid #e2e8f0;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        /* --- Experience & Education --- */
-        .timeline-item {
-            background: white;
+        .award-card {
+            background: rgba(255,255,255,0.1);
             padding: 2rem;
             border-radius: 12px;
-            margin-bottom: 2rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            border-left: 5px solid var(--primary);
+            border: 1px solid rgba(255,255,255,0.1);
         }
 
-        .job-header {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            margin-bottom: 1rem;
-        }
-
-        .role {
-            font-weight: 700;
-            font-size: 1.2rem;
-        }
-
-        .company {
+        .award-title {
             color: var(--primary);
-            font-weight: 600;
-        }
-
-        .date {
-            color: var(--text-gray);
-            font-size: 0.9rem;
-        }
-
-        ul.achievements {
-            padding-left: 1.2rem;
-            color: #475569;
-        }
-
-        ul.achievements li {
+            font-weight: 700;
             margin-bottom: 0.5rem;
+            font-size: 1.2rem;
         }
 
         /* --- Footer --- */
         footer {
-            background: var(--dark);
-            color: white;
             text-align: center;
-            padding: 3rem 5%;
-            margin-top: 4rem;
-        }
-
-        .social-links a {
-            color: white;
-            font-size: 1.5rem;
-            margin: 0 1rem;
-            transition: color 0.3s;
-        }
-
-        .social-links a:hover {
-            color: var(--primary);
+            padding: 4rem 5%;
+            background: white;
         }
 
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.5rem; }
-            .nav-links { display: none; } /* Simplified for mobile */
+            .project-content { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="logo">TRIDISHA BARUAH</div>
+        <div class="logo">TRIDISHA <span>BARUAH</span></div>
         <div class="nav-links">
             <a href="#about">About</a>
-            <a href="#experience">Experience</a>
-            <a href="#education">Education</a>
+            <a href="#projects">Case Studies</a>
+            <a href="#awards">Awards</a>
             <a href="#contact">Contact</a>
         </div>
     </nav>
 
-    <section class="hero">
-        <h1>Driving Growth Through <br><span class="highlight">Data & Creativity</span></h1>
-        <p>Performance Marketing Specialist bridging the gap between Computer Science and Digital Strategy. Expert in GA4, Paid Media, and Revenue Optimization.</p>
-        <br>
-        <a href="#contact" class="btn">Get in Touch</a>
+    <section class="hero" id="about">
+        <p class="tagline">"Digital marketing is equal parts storytelling and science."</p>
+        <h1>Scaling Revenue & Reach for <br>Global Brands</h1>
+        <p style="max-width: 600px; margin: 0 auto 2rem; color: #64748b;">
+            MSc Digital Marketing (1:1) | BTech Computer Science<br>
+            Specializing in Paid Media, SEO, and Monetization Strategy.
+        </p>
+        <a href="#contact" class="btn">View My Resume</a>
     </section>
 
-    <div class="stats-container">
+    <div class="stats-grid">
         <div class="stat-card">
-            <span class="stat-number">$1M+</span>
-            <span class="stat-label">Revenue Generated at Pinkvilla</span>
+            <span class="stat-num">99.6M</span>
+            <span>Monetizable Views (Pinkvilla)</span>
         </div>
         <div class="stat-card">
-            <span class="stat-number">1:1</span>
-            <span class="stat-label">MSc Digital Marketing (Honours)</span>
+            <span class="stat-num">76.2M</span>
+            <span>Accounts Reached (Meta)</span>
         </div>
         <div class="stat-card">
-            <span class="stat-number">3+</span>
-            <span class="stat-label">Years Global Experience</span>
+            <span class="stat-num">1:1</span>
+            <span>First Class Honours</span>
         </div>
     </div>
 
-    <section class="section" id="skills">
-        <h2 class="section-title">Technical Stack</h2>
-        <div class="skills-grid">
-            <div class="skill-tag"><i class="fab fa-google"></i> Google Ads & GA4</div>
-            <div class="skill-tag"><i class="fab fa-facebook"></i> Meta Ads Manager</div>
-            <div class="skill-tag"><i class="fas fa-chart-line"></i> Power BI</div>
-            <div class="skill-tag"><i class="fab fa-tiktok"></i> TikTok Ads</div>
-            <div class="skill-tag"><i class="fab fa-hubspot"></i> HubSpot CRM</div>
-            <div class="skill-tag"><i class="fas fa-code"></i> HTML/CSS (BTech Bg)</div>
-            <div class="skill-tag"><i class="fas fa-search"></i> SEO & CRO</div>
+    <div class="client-strip">
+        <div style="text-align: center; margin-bottom: 1rem; font-size: 0.9rem; letter-spacing: 1px;">WORKED ON CAMPAIGNS FOR</div>
+        <div class="client-logos">
+            <span>NETFLIX</span>
+            <span>AMAZON PRIME</span>
+            <span>DISNEY+ HOTSTAR</span>
+            <span>L'ORÉAL</span>
+            <span>AUNUA GLOBAL</span>
+        </div>
+    </div>
+
+    <section class="project-container" id="projects">
+        <h2 class="section-title">Selected Works</h2>
+
+        <div class="project-card">
+            <div class="project-header">
+                <div>
+                    <h3>Pinkvilla USA & India</h3>
+                    <p>Performance Marketing & Content Monetization</p>
+                </div>
+                <i class="fab fa-facebook fa-2x"></i>
+            </div>
+            <div class="project-content">
+                <div>
+                    <h4>The Challenge</h4>
+                    <p>Scale video monetization and audience engagement for a massive entertainment publisher across Facebook and Instagram.</p>
+                    <br>
+                    <h4>The "Science"</h4>
+                    <p>Leveraged "Reels Play" bonuses and in-stream ad breaks. Analyzed retention metrics to optimize video length (1-minute+ strategy).</p>
+                    <div class="tech-stack">
+                        <span class="tech-badge">Meta Business Suite</span>
+                        <span class="tech-badge">Creator Studio</span>
+                        <span class="tech-badge">Data Analytics</span>
+                    </div>
+                </div>
+                <div>
+                    <h4>Key Results (Validated)</h4>
+                    <div class="metric-box">
+                        <p><strong>$18,001.79</strong> approx earnings/month from video ads.</p>
+                        <p><strong>+416%</strong> increase in Reel plays (Viral Growth).</p>
+                        <p><strong>19M</strong> accounts reached in a single 28-day period.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-header">
+                <div>
+                    <h3>The Giddy Dolphin (Dublin Pub)</h3>
+                    <p>Comprehensive Digital Audit & SEO Strategy</p>
+                </div>
+                <i class="fas fa-beer fa-2x"></i>
+            </div>
+            <div class="project-content">
+                <div>
+                    <h4>The Strategy</h4>
+                    <p>Conducted a deep-dive SWOT and Competitor Analysis against local rivals (Buskers, O'Riordans).</p>
+                    <br>
+                    <h4>The Execution</h4>
+                    <p>Performed a Moz Link Analysis to identify backlink gaps. Identified that competitors had significantly higher Domain Authority (DA) and proposed a content strategy to bridge the gap.</p>
+                    <div class="tech-stack">
+                        <span class="tech-badge">SEO</span>
+                        <span class="tech-badge">Moz Pro</span>
+                        <span class="tech-badge">SWOT Analysis</span>
+                    </div>
+                </div>
+                <div>
+                    <h4>Insights Delivered</h4>
+                    <div class="metric-box">
+                        <p>Identified critical keyword gaps in "Live Music Dublin" & "Tech Darts".</p>
+                        <p>Mapped "Inbound Link" deficits (15 vs. 501 competitor links).</p>
+                        <p>Delivered actionable roadmap for Local SEO dominance.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-header">
+                <div>
+                    <h3>Ferromag Technologies</h3>
+                    <p>B2B Content Strategy & Branding</p>
+                </div>
+                <i class="fas fa-industry fa-2x"></i>
+            </div>
+            <div class="project-content">
+                <div>
+                    <h4>The Scope</h4>
+                    <p>Redefining the brand voice for a B2B manufacturer of Transformers & Reactors.</p>
+                    <br>
+                    <h4>The Work</h4>
+                    <p>Designed professional marketing brochures using Canva & Adobe Suite. Translated complex technical specs (15 MVA Rating, 6kV voltage) into compelling sales narratives.</p>
+                    <div class="tech-stack">
+                        <span class="tech-badge">B2B Marketing</span>
+                        <span class="tech-badge">Technical Writing</span>
+                        <span class="tech-badge">Adobe Suite</span>
+                    </div>
+                </div>
+                <div style="display: flex; align-items: center; justify-content: center; background: #f8fafc; border-radius: 10px;">
+                    <p style="color: #64748b; font-style: italic;">"Redefining Transformation"</p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section class="section" id="experience">
-        <h2 class="section-title">Professional Experience</h2>
-
-        <div class="timeline-item">
-            <div class="job-header">
-                <div>
-                    <div class="role">Digital Marketing Intern & CEO Office Analyst</div>
-                    <div class="company">Aunua Global (Dublin)</div>
-                </div>
-                <div class="date">Feb 2025 - Present</div>
+    <section class="awards-section" id="awards">
+        <h2 class="section-title" style="color: white;">Recognition & Certs</h2>
+        <div class="awards-grid">
+            <div class="award-card">
+                <div class="award-title">Certificate of Excellence</div>
+                <p><strong>Pinkvilla (Mar 2021 & July 2022)</strong></p>
+                <p style="margin-top: 1rem; font-size: 0.9rem;">Awarded twice for being "Customer Obsessed" and driving exceptional operational results.</p>
             </div>
-            <ul class="achievements">
-                <li>Manage multi-channel digital communication and audience engagement across social platforms.</li>
-                <li>Analyze GA4 and Power BI dashboards to evaluate creative performance and optimize advertising strategies.</li>
-                <li>Drive ad copy development and design reviews for visual consistency.</li>
-            </ul>
-        </div>
-
-        <div class="timeline-item">
-            <div class="job-header">
-                <div>
-                    <div class="role">Performance Marketing & Creative Content Lead</div>
-                    <div class="company">Pinkvilla (India & USA)</div>
-                </div>
-                <div class="date">Jan 2022 - Mar 2024</div>
+            <div class="award-card">
+                <div class="award-title">Technical Certifications</div>
+                <ul style="list-style: none; margin-top: 1rem;">
+                    <li><i class="fas fa-check-circle" style="color: #4ade80; margin-right: 10px;"></i>Google Display & Video 360</li>
+                    <li><i class="fas fa-check-circle" style="color: #4ade80; margin-right: 10px;"></i>Apple Ads Certified</li>
+                    <li><i class="fas fa-check-circle" style="color: #4ade80; margin-right: 10px;"></i>HubSpot Content Marketing</li>
+                </ul>
             </div>
-            <ul class="achievements">
-                <li>Managed digital monetization campaigns generating <strong>$1M+ revenue</strong>, applying analytical insights to improve CTR and ROAS.</li>
-                <li>Led paid social initiatives across Meta, overseeing ad concept development and UGC scriptwriting.</li>
-                <li>Conducted market research to identify creative opportunities and packaging enhancements.</li>
-            </ul>
-        </div>
-
-        <div class="timeline-item">
-            <div class="job-header">
-                <div>
-                    <div class="role">Digital Campaign Strategist</div>
-                    <div class="company">Procter & Gamble</div>
-                </div>
-                <div class="date">Jan 2020 - Dec 2021</div>
-            </div>
-            <ul class="achievements">
-                <li>Supported paid digital campaigns focusing on creative performance evaluation and reporting.</li>
-                <li>Analyzed user engagement and audience behavior to refine communication strategies.</li>
-            </ul>
-        </div>
-    </section>
-
-    <section class="section" id="education">
-        <h2 class="section-title">Education</h2>
-        
-        <div class="timeline-item">
-            <div class="job-header">
-                <div>
-                    <div class="role">M.Sc. Digital Marketing & Analytics</div>
-                    <div class="company">Dublin Business School</div>
-                </div>
-                <div class="date">2024 - 2025</div>
-            </div>
-            <p><strong>Grade: First Class Honours (1:1)</strong></p>
-            <p>Key Modules: Digital Performance Analytics (GA4), CRO, Paid Media Optimization, Business Intelligence (Power BI).</p>
-        </div>
-
-        <div class="timeline-item">
-            <div class="job-header">
-                <div>
-                    <div class="role">MBA Technical Marketing & BTech Computer Science</div>
-                    <div class="company">NMIMS Mumbai</div>
-                </div>
-                <div class="date">2015 - 2020</div>
-            </div>
-            <p>Integrated technical background providing a strong foundation in data logic and systems.</p>
         </div>
     </section>
 
     <footer id="contact">
-        <h2>Let's Scale Your Digital Presence</h2>
-        <p style="margin: 1rem 0; opacity: 0.8;">Open to opportunities in Dublin (Stamp 1G)</p>
-        <div class="social-links">
-            <a href="mailto:tridishabaruahofficial@gmail.com"><i class="fas fa-envelope"></i></a>
-            <a href="https://linkedin.com/in/tridisha-baruah-851418118/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <h3>Ready to Scale?</h3>
+        <p style="margin: 1rem 0;">tridishabaruahofficial@gmail.com | +353 899609417</p>
+        <div style="margin-top: 2rem;">
+            <a href="https://linkedin.com/in/tridisha-baruah-851418118/" style="color: var(--primary); font-size: 2rem; margin: 0 10px;"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:tridishabaruahofficial@gmail.com" style="color: var(--primary); font-size: 2rem; margin: 0 10px;"><i class="fas fa-envelope"></i></a>
         </div>
-        <p style="margin-top: 2rem; font-size: 0.8rem;">&copy; 2026 Tridisha Baruah</p>
     </footer>
 
     <script>
+        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
