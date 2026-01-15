@@ -3,441 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tridisha Baruah | Digital Marketing Portfolio</title>
+    <title>Tridisha Baruah | Digital Strategist</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        :root {
-            --primary: #E11D48; /* Pinkvilla-inspired Pink/Red for impact */
-            --primary-dark: #be123c;
-            --dark: #0f172a;
-            --light: #f8fafc;
-            --text-gray: #475569;
-            --glass: rgba(255, 255, 255, 0.95);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-        }
-
-        body {
-            background-color: var(--light);
-            color: var(--dark);
-            line-height: 1.6;
-        }
-
-        /* --- Navigation --- */
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.5rem 5%;
-            background: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .logo {
-            font-weight: 800;
-            font-size: 1.4rem;
-            color: var(--dark);
-        }
-
+        :root { --primary: #E11D48; --dark: #0f172a; --light: #f8fafc; --text: #334155; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        body { background: var(--light); color: var(--text); }
+        
+        /* Nav */
+        nav { display: flex; justify-content: space-between; padding: 1.5rem 5%; background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .logo { font-weight: 800; font-size: 1.4rem; color: var(--dark); text-decoration: none; }
         .logo span { color: var(--primary); }
+        .nav-links a { text-decoration: none; color: var(--text); margin-left: 2rem; font-weight: 600; }
+        .nav-links a:hover, .nav-links a.active { color: var(--primary); }
 
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-gray);
-            margin-left: 2rem;
-            font-weight: 600;
-            transition: color 0.3s;
-            font-size: 0.95rem;
-        }
+        /* Hero */
+        .hero { padding: 6rem 5%; text-align: center; max-width: 1000px; margin: 0 auto; }
+        .hero h1 { font-size: 3.5rem; color: var(--dark); line-height: 1.1; margin-bottom: 1rem; }
+        .tagline { font-size: 1.4rem; color: #64748b; font-style: italic; margin-bottom: 2rem; }
+        .btn { background: var(--primary); color: white; padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 700; transition: 0.3s; }
+        .btn:hover { background: #be123c; transform: translateY(-3px); }
 
-        .nav-links a:hover { color: var(--primary); }
+        /* Stats */
+        .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; padding: 2rem 5%; max-width: 1200px; margin: 0 auto; }
+        .stat-card { background: var(--dark); color: white; padding: 2rem; border-radius: 12px; text-align: center; }
+        .stat-num { font-size: 2.5rem; font-weight: 800; color: var(--primary); display: block; }
 
-        /* --- Hero Section --- */
-        .hero {
-            padding: 8rem 5% 4rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            text-align: center;
-        }
+        /* Projects */
+        .projects { padding: 5rem 5%; max-width: 1200px; margin: 0 auto; }
+        .project-card { background: white; border-radius: 15px; margin-bottom: 4rem; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.05); display: grid; grid-template-columns: 1fr 1fr; }
+        .p-content { padding: 3rem; }
+        .p-img-container { background: #f1f5f9; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+        .p-img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+        .project-card:hover .p-img { transform: scale(1.05); }
+        .metric-box { background: #fff0f3; padding: 1.5rem; border-left: 4px solid var(--primary); margin-top: 1.5rem; border-radius: 8px; }
 
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
-            line-height: 1.1;
-            color: var(--dark);
-        }
+        footer { text-align: center; padding: 3rem; background: var(--dark); color: white; margin-top: 4rem; }
+        footer a { color: white; margin: 0 10px; font-size: 1.5rem; }
 
-        .hero p.tagline {
-            font-size: 1.5rem;
-            color: var(--text-gray);
-            font-style: italic;
-            margin-bottom: 2rem;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .btn {
-            display: inline-block;
-            background: var(--primary);
-            color: white;
-            padding: 1rem 2.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            transition: all 0.3s;
-            box-shadow: 0 4px 15px rgba(225, 29, 72, 0.3);
-        }
-
-        .btn:hover {
-            background: var(--primary-dark);
-            transform: translateY(-2px);
-        }
-
-        /* --- Client Strip --- */
-        .client-strip {
-            background: white;
-            padding: 2rem 5%;
-            margin-top: 4rem;
-            border-top: 1px solid #e2e8f0;
-            border-bottom: 1px solid #e2e8f0;
-        }
-
-        .client-logos {
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
-            flex-wrap: wrap;
-            align-items: center;
-            opacity: 0.6;
-            font-weight: 700;
-            font-size: 1.2rem;
-            color: #94a3b8;
-        }
-
-        /* --- Stats Grid --- */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            max-width: 1000px;
-            margin: -3rem auto 5rem;
-            position: relative;
-            z-index: 10;
-            padding: 0 5%;
-        }
-
-        .stat-card {
-            background: var(--dark);
-            color: white;
-            padding: 2rem;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-
-        .stat-num {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: var(--primary);
-            display: block;
-            margin-bottom: 0.5rem;
-        }
-
-        /* --- Projects / Case Studies --- */
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-        }
-
-        .project-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 5% 5rem;
-        }
-
-        .project-card {
-            background: white;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-            margin-bottom: 3rem;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .project-header {
-            background: var(--dark);
-            color: white;
-            padding: 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
-        .project-content {
-            padding: 2rem;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-        }
-
-        .metric-box {
-            background: #f1f5f9;
-            padding: 1.5rem;
-            border-radius: 10px;
-            border-left: 4px solid var(--primary);
-        }
-
-        .tech-stack {
-            margin-top: 1rem;
-            display: flex;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-        }
-
-        .tech-badge {
-            background: #e2e8f0;
-            padding: 0.3rem 0.8rem;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            font-weight: 600;
-        }
-
-        /* --- Awards Section --- */
-        .awards-section {
-            background: var(--dark);
-            color: white;
-            padding: 5rem 5%;
-        }
-
-        .awards-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .award-card {
-            background: rgba(255,255,255,0.1);
-            padding: 2rem;
-            border-radius: 12px;
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .award-title {
-            color: var(--primary);
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            font-size: 1.2rem;
-        }
-
-        /* --- Footer --- */
-        footer {
-            text-align: center;
-            padding: 4rem 5%;
-            background: white;
-        }
-
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.5rem; }
-            .project-content { grid-template-columns: 1fr; }
-            .nav-links { display: none; }
-        }
+        @media (max-width: 768px) { .project-card { grid-template-columns: 1fr; } .hero h1 { font-size: 2.5rem; } }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="logo">TRIDISHA <span>BARUAH</span></div>
+        <a href="index.html" class="logo">TRIDISHA <span>BARUAH</span></a>
         <div class="nav-links">
-            <a href="#about">About</a>
-            <a href="#projects">Case Studies</a>
-            <a href="#awards">Awards</a>
-            <a href="#contact">Contact</a>
+            <a href="index.html" class="active">Work</a>
+            <a href="about.html">About</a>
+            <a href="resume.html">Resume</a>
         </div>
     </nav>
 
-    <section class="hero" id="about">
+    <header class="hero">
+        <h1>Data-Driven Growth for<br>Global Brands</h1>
         <p class="tagline">"Digital marketing is equal parts storytelling and science."</p>
-        <h1>Scaling Revenue & Reach for <br>Global Brands</h1>
-        <p style="max-width: 600px; margin: 0 auto 2rem; color: #64748b;">
-            MSc Digital Marketing (1:1) | BTech Computer Science<br>
-            Specializing in Paid Media, SEO, and Monetization Strategy.
-        </p>
-        <a href="#contact" class="btn">View My Resume</a>
-    </section>
+        <div style="margin-top: 2rem;">
+            <a href="resume.html" class="btn">View My Resume</a>
+        </div>
+    </header>
 
-    <div class="stats-grid">
+    <section class="stats">
         <div class="stat-card">
-            <span class="stat-num">99.6M</span>
-            <span>Monetizable Views (Pinkvilla)</span>
+            <span class="stat-num">$1M+</span>
+            <span>Revenue Generated</span>
         </div>
         <div class="stat-card">
-            <span class="stat-num">76.2M</span>
-            <span>Accounts Reached (Meta)</span>
+            <span class="stat-num">99M+</span>
+            <span>Views Delivered</span>
         </div>
         <div class="stat-card">
             <span class="stat-num">1:1</span>
-            <span>First Class Honours</span>
+            <span>MSc Honours</span>
         </div>
-    </div>
+    </section>
 
-    <div class="client-strip">
-        <div style="text-align: center; margin-bottom: 1rem; font-size: 0.9rem; letter-spacing: 1px;">WORKED ON CAMPAIGNS FOR</div>
-        <div class="client-logos">
-            <span>NETFLIX</span>
-            <span>AMAZON PRIME</span>
-            <span>DISNEY+ HOTSTAR</span>
-            <span>L'ORÉAL</span>
-            <span>AUNUA GLOBAL</span>
-        </div>
-    </div>
-
-    <section class="project-container" id="projects">
-        <h2 class="section-title">Selected Works</h2>
+    <section class="projects">
+        <h2 style="text-align: center; font-size: 2rem; margin-bottom: 3rem;">Selected Case Studies</h2>
 
         <div class="project-card">
-            <div class="project-header">
-                <div>
-                    <h3>Pinkvilla USA & India</h3>
-                    <p>Performance Marketing & Content Monetization</p>
+            <div class="p-content">
+                <h3>Pinkvilla (USA & India)</h3>
+                <p style="color: var(--primary); font-weight: 700; margin-bottom: 1rem;">Monetization Strategy</p>
+                [cite_start]<p>Managed monetization for a massive entertainment publisher. Leveraged "Reels Play" bonuses and analyzed retention metrics to optimize video length[cite: 21, 24].</p>
+                <div class="metric-box">
+                    [cite_start]<p><strong>$18,001</strong> Monthly Ad Revenue [cite: 24]</p>
+                    [cite_start]<p><strong>+416%</strong> Increase in Reel Plays [cite: 257]</p>
+                    [cite_start]<p><strong>76.2M</strong> Accounts Reached [cite: 210]</p>
                 </div>
-                <i class="fab fa-facebook fa-2x"></i>
             </div>
-            <div class="project-content">
-                <div>
-                    <h4>The Challenge</h4>
-                    <p>Scale video monetization and audience engagement for a massive entertainment publisher across Facebook and Instagram.</p>
-                    <br>
-                    <h4>The "Science"</h4>
-                    <p>Leveraged "Reels Play" bonuses and in-stream ad breaks. Analyzed retention metrics to optimize video length (1-minute+ strategy).</p>
-                    <div class="tech-stack">
-                        <span class="tech-badge">Meta Business Suite</span>
-                        <span class="tech-badge">Creator Studio</span>
-                        <span class="tech-badge">Data Analytics</span>
-                    </div>
-                </div>
-                <div>
-                    <h4>Key Results (Validated)</h4>
-                    <div class="metric-box">
-                        <p><strong>$18,001.79</strong> approx earnings/month from video ads.</p>
-                        <p><strong>+416%</strong> increase in Reel plays (Viral Growth).</p>
-                        <p><strong>19M</strong> accounts reached in a single 28-day period.</p>
-                    </div>
-                </div>
+            <div class="p-img-container">
+                <img src="dashboard.jpg" class="p-img" alt="Pinkvilla Stats" onerror="this.src='https://via.placeholder.com/600x400?text=Revenue+Dashboard'">
             </div>
         </div>
 
         <div class="project-card">
-            <div class="project-header">
-                <div>
-                    <h3>The Giddy Dolphin (Dublin Pub)</h3>
-                    <p>Comprehensive Digital Audit & SEO Strategy</p>
-                </div>
-                <i class="fas fa-beer fa-2x"></i>
+            <div class="p-img-container">
+                 <img src="certificate.jpg" class="p-img" alt="Awards" onerror="this.src='https://via.placeholder.com/600x400?text=Awards+Certificate'">
             </div>
-            <div class="project-content">
-                <div>
-                    <h4>The Strategy</h4>
-                    <p>Conducted a deep-dive SWOT and Competitor Analysis against local rivals (Buskers, O'Riordans).</p>
-                    <br>
-                    <h4>The Execution</h4>
-                    <p>Performed a Moz Link Analysis to identify backlink gaps. Identified that competitors had significantly higher Domain Authority (DA) and proposed a content strategy to bridge the gap.</p>
-                    <div class="tech-stack">
-                        <span class="tech-badge">SEO</span>
-                        <span class="tech-badge">Moz Pro</span>
-                        <span class="tech-badge">SWOT Analysis</span>
-                    </div>
-                </div>
-                <div>
-                    <h4>Insights Delivered</h4>
-                    <div class="metric-box">
-                        <p>Identified critical keyword gaps in "Live Music Dublin" & "Tech Darts".</p>
-                        <p>Mapped "Inbound Link" deficits (15 vs. 501 competitor links).</p>
-                        <p>Delivered actionable roadmap for Local SEO dominance.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="project-card">
-            <div class="project-header">
-                <div>
-                    <h3>Ferromag Technologies</h3>
-                    <p>B2B Content Strategy & Branding</p>
-                </div>
-                <i class="fas fa-industry fa-2x"></i>
-            </div>
-            <div class="project-content">
-                <div>
-                    <h4>The Scope</h4>
-                    <p>Redefining the brand voice for a B2B manufacturer of Transformers & Reactors.</p>
-                    <br>
-                    <h4>The Work</h4>
-                    <p>Designed professional marketing brochures using Canva & Adobe Suite. Translated complex technical specs (15 MVA Rating, 6kV voltage) into compelling sales narratives.</p>
-                    <div class="tech-stack">
-                        <span class="tech-badge">B2B Marketing</span>
-                        <span class="tech-badge">Technical Writing</span>
-                        <span class="tech-badge">Adobe Suite</span>
-                    </div>
-                </div>
-                <div style="display: flex; align-items: center; justify-content: center; background: #f8fafc; border-radius: 10px;">
-                    <p style="color: #64748b; font-style: italic;">"Redefining Transformation"</p>
+            <div class="p-content">
+                <h3>Customer Obsessed Award</h3>
+                <p style="color: var(--primary); font-weight: 700; margin-bottom: 1rem;">Operational Excellence</p>
+                [cite_start]<p>Awarded the "Certificate of Excellence" twice at Pinkvilla for driving exceptional results and maintaining high engagement standards [cite: 399-427].</p>
+                <div class="metric-box">
+                    <p><strong>2x Winner</strong> (2021 & 2022)</p>
+                    <p>Recognized for <strong>Strategic Leadership</strong></p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="awards-section" id="awards">
-        <h2 class="section-title" style="color: white;">Recognition & Certs</h2>
-        <div class="awards-grid">
-            <div class="award-card">
-                <div class="award-title">Certificate of Excellence</div>
-                <p><strong>Pinkvilla (Mar 2021 & July 2022)</strong></p>
-                <p style="margin-top: 1rem; font-size: 0.9rem;">Awarded twice for being "Customer Obsessed" and driving exceptional operational results.</p>
-            </div>
-            <div class="award-card">
-                <div class="award-title">Technical Certifications</div>
-                <ul style="list-style: none; margin-top: 1rem;">
-                    <li><i class="fas fa-check-circle" style="color: #4ade80; margin-right: 10px;"></i>Google Display & Video 360</li>
-                    <li><i class="fas fa-check-circle" style="color: #4ade80; margin-right: 10px;"></i>Apple Ads Certified</li>
-                    <li><i class="fas fa-check-circle" style="color: #4ade80; margin-right: 10px;"></i>HubSpot Content Marketing</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <footer id="contact">
-        <h3>Ready to Scale?</h3>
-        <p style="margin: 1rem 0;">tridishabaruahofficial@gmail.com | +353 899609417</p>
-        <div style="margin-top: 2rem;">
-            <a href="https://linkedin.com/in/tridisha-baruah-851418118/" style="color: var(--primary); font-size: 2rem; margin: 0 10px;"><i class="fab fa-linkedin"></i></a>
-            <a href="mailto:tridishabaruahofficial@gmail.com" style="color: var(--primary); font-size: 2rem; margin: 0 10px;"><i class="fas fa-envelope"></i></a>
+    <footer>
+        <p>tridishabaruahofficial@gmail.com | Dublin, Ireland</p>
+        <div style="margin-top: 1rem;">
+            <a href="https://linkedin.com/in/tridisha-baruah-851418118/"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:tridishabaruahofficial@gmail.com"><i class="fas fa-envelope"></i></a>
         </div>
     </footer>
 
-    <script>
-        // Smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
 </body>
 </html>
