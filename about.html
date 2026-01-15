@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Tridisha</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root { --primary: #E11D48; --dark: #0f172a; --light: #f8fafc; --text: #334155; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        body { background: var(--light); color: var(--text); line-height: 1.8; }
+        
+        nav { display: flex; justify-content: space-between; padding: 1.5rem 5%; background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .logo { font-weight: 800; font-size: 1.4rem; color: var(--dark); text-decoration: none; }
+        .logo span { color: var(--primary); }
+        .nav-links a { text-decoration: none; color: var(--text); margin-left: 2rem; font-weight: 600; }
+        .nav-links a:hover, .nav-links a.active { color: var(--primary); }
+
+        .container { max-width: 900px; margin: 4rem auto; padding: 0 5%; }
+        
+        .profile-header { text-align: center; margin-bottom: 4rem; }
+        .profile-pic { width: 200px; height: 200px; border-radius: 50%; object-fit: cover; border: 5px solid white; box-shadow: 0 10px 25px rgba(225, 29, 72, 0.2); margin-bottom: 2rem; }
+        
+        h1 { font-size: 2.5rem; color: var(--dark); margin-bottom: 1rem; }
+        .quote { font-size: 1.5rem; color: var(--primary); font-style: italic; font-weight: 600; margin: 2rem 0; padding-left: 2rem; border-left: 4px solid var(--primary); }
+        
+        .text-block { background: white; padding: 2.5rem; border-radius: 12px; margin-bottom: 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        
+        footer { text-align: center; padding: 3rem; background: var(--dark); color: white; margin-top: 4rem; }
+        footer a { color: white; margin: 0 10px; font-size: 1.5rem; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">TRIDISHA <span>BARUAH</span></a>
+        <div class="nav-links">
+            <a href="index.html">Work</a>
+            <a href="about.html" class="active">About</a>
+            <a href="resume.html">Resume</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="profile-header">
+            <img src="profile.jpg" alt="Tridisha Baruah" class="profile-pic" onerror="this.src='https://via.placeholder.com/200?text=TB'">
+            <h1>Storyteller by Heart,<br>Analyst by Training.</h1>
+        </div>
+
+        <div class="text-block">
+            [cite_start]<p class="quote">"I like to think of digital marketing as equal parts storytelling and science." [cite: 68]</p>
+            <p>Every campaign I build starts with a question: How do we connect meaningfully with people while driving measurable impact for the brand?</p>
+            <br>
+            <p>With a foundation in <strong>Computer Science (BTech)</strong> and a Master's in <strong>Digital Marketing (1:1)</strong>, I bridge the gap between creative intuition and data logic. I don't just create content; I analyze the systems that make content travel.</p>
+        </div>
+
+        <div class="text-block">
+            <h3>My Journey</h3>
+            <br>
+            [cite_start]<p>From leading B2B campaigns for giants like <strong>Netflix India</strong> and <strong>Amazon Prime Video</strong>[cite: 74], to managing multi-channel content for international organizations like Aunua Global, I have learned that the best campaigns happen when insights and execution align seamlessly.</p>
+            <br>
+            <p>Currently based in Dublin (Stamp 1G), I am looking to bring my experience in revenue scaling and audience growth to a forward-thinking marketing team.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>Let's work together.</p>
+        <div style="margin-top: 1rem;">
+            <a href="https://linkedin.com/in/tridisha-baruah-851418118/"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:tridishabaruahofficial@gmail.com"><i class="fas fa-envelope"></i></a>
+        </div>
+    </footer>
+
+</body>
+</html>
